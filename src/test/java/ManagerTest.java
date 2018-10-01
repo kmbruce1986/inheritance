@@ -49,4 +49,16 @@ public class ManagerTest {
     public void canPayBonus() {
         assertEquals(10000.00, manager.payBonus(), 0.01);
     }
+
+    @Test
+    public void canChangeName() {
+        manager.setName("Walter Disney");
+        assertEquals("Walter Disney", manager.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNull() {
+        manager.setName(null);
+        assertEquals("Walt Disney", manager.getName());
+    }
 }

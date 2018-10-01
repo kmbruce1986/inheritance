@@ -55,5 +55,16 @@ public class DirectorTest {
         assertEquals(100000.00, director.payBonus(), 0.01);
     }
 
+    @Test
+    public void canChangeName() {
+        director.setName("Minerva Mouse");
+        assertEquals("Minerva Mouse", director.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNull() {
+        director.setName(null);
+        assertEquals("Minnie Mouse", director.getName());
+    }
 
 }

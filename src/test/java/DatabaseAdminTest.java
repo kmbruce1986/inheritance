@@ -44,4 +44,16 @@ public class DatabaseAdminTest {
     public void canPayBonus() {
         assertEquals(400.00, databaseAdmin.payBonus(), 0.01);
     }
+
+    @Test
+    public void canChangeName() {
+        databaseAdmin.setName("Goofball");
+        assertEquals("Goofball", databaseAdmin.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNull() {
+        databaseAdmin.setName(null);
+        assertEquals("Goofy", databaseAdmin.getName());
+    }
 }

@@ -44,4 +44,16 @@ public class DeveloperTest {
     public void canPayBonus() {
         assertEquals(500.00, developer.payBonus(), 0.01);
     }
+
+    @Test
+    public void canChangeName() {
+        developer.setName("Michael Mouse");
+        assertEquals("Michael Mouse", developer.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNull() {
+        developer.setName(null);
+        assertEquals("Mickey Mouse", developer.getName());
+    }
 }
